@@ -1,0 +1,994 @@
+.abcontainer {
+    display: grid;
+    grid-template-columns: min-content repeat(3, 1fr);
+    grid-template-rows: 6rem 25vh repeat(9, 1fr); 
+    
+    @include mediaSm {
+        grid-template-rows: min-content repeat(24, auto);
+    }
+
+    @include mediaMd {
+        grid-template-rows: min-content repeat(24, auto);
+    }
+
+    @include mediaML {
+        grid-template-rows: min-content repeat(24, auto);
+    }
+
+    @include mediaLg {
+        grid-template-rows: min-content repeat(24, auto);
+    }
+    
+
+    & //Main Nav Start
+    .main-nav {
+        grid-row: 1;
+        grid-column: 2 / span 4;
+        position: sticky;
+        overflow: hidden;
+        top: 0%;
+        width: 100%;
+        max-width: 1920px;
+        height: 6rem;
+        background-color: rgba($color1, $alpha: 0.9);
+        color: $color2;
+        z-index: 2;
+        @include easeOut;
+
+        @include mediaLg {
+            grid-column: 2 / span 4;
+        }
+        
+        @include mediaML {
+            grid-column: 2 / span 4;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / -1;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+        }
+        
+        & ul {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1rem;
+            margin: 0px;
+            font-size: 1.6rem;             
+            
+            @include mediaSm {
+                justify-content: center;
+            }
+    
+            @include mediaMd {
+                justify-content:left;
+            }
+        }
+    
+        & .mainNav-item {
+    
+            @include mediaSm {
+                display: none;
+            }
+            
+            @include mediaMd {                
+                display: none;
+            }
+    
+            @include mediaML {
+                visibility: hidden;
+                
+            }
+    
+            @include mediaLg {
+                justify-content: left;
+                
+            }
+            
+            a {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                @include easeOut;
+    
+                
+                
+                &:hover {
+                    color:$color2;
+                }
+            }
+        }
+    
+        .siteicon {
+            max-width: 5rem;
+            align-self: center;
+
+            @include mediaSm {
+                justify-self: center;
+            }
+            
+        }    
+        
+    }
+    //Main Nav End
+
+    .sidebar {
+        padding-top: 6rem;
+        grid-row: 1 / -1;
+        grid-column: 1;
+        height: 100%;
+        width: 100%;    
+        background-color: $color2;
+        font-size: 1.6rem;
+
+        @include mediaML {
+            grid-row: 2;
+            grid-column: 1 / span 5;
+            height: 100%;
+            width: 100%;    
+            font-size: 1.6rem; 
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr min-content 1fr;
+            align-items: center;
+            justify-items: center;
+        }        
+        
+        @include mediaMd {
+            grid-row: 2;
+            grid-column: 1 / span 5;
+            height: 100%;
+            width: 100%;    
+            font-size: 1.6rem; 
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr min-content 1fr;
+            align-items: center;
+            justify-items: center;
+        }
+
+        @include mediaSm {
+            grid-row: 2;
+            grid-column: 1 / span 5;
+            height: 100%;
+            width: 100%;    
+            font-size: 1.6rem; 
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(3, auto);
+            align-items: center;
+        }
+
+        & .profimg {
+            width: 100%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+            border-radius: 25%;
+            max-height: 300px;
+            max-width: 300px;
+            
+
+            @include mediaSm {
+                display: none;                
+            }
+
+            @include mediaMd {
+                padding: 2rem;                
+            }
+
+            @include mediaML {
+                padding: 2rem;                
+            }
+        }
+
+        & .social {
+            color: black;
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 0;
+
+            @include mediaML {
+                flex-direction: column;
+                height: 100%;                
+            }
+
+            @include mediaMd {
+                flex-direction: column;
+                height: 100%;                
+            }
+
+            @include mediaSm {
+                flex-direction: row;
+            }
+
+            & a {
+                color: black;
+            }
+
+            
+        }
+
+        & .details {
+            padding: 1rem;
+
+            @include mediaMd {
+                text-align: center;
+            }
+
+            @include mediaSm {
+                text-align: center;
+            }
+
+            & P {
+                padding: 1rem 0;
+
+                @include mediaML {
+                    padding: 0.5rem;                        
+                }
+
+                @include mediaMd {
+                    padding: 0.5rem;                        
+                }
+
+                @include mediaSm {
+                    padding: 0.5rem;                        
+                }
+            }
+        }
+
+        & .cert {
+            padding: 1rem;
+
+            & P {
+                padding: 1rem 0;                
+            }
+
+            @include mediaML {
+                padding: 0.5rem;
+                display: none;   
+            }
+
+            @include mediaMd {
+                padding: 0.5rem;
+                display: none;   
+            }
+
+            @include mediaSm {
+                padding: 0.5rem;
+                display: none;   
+            }
+            
+        }
+    
+    }
+
+    & .aboutro {
+        background-image: url(../img/Logo1.jpg);
+        background-position: center;
+        background-size: cover;
+        grid-row: 2;
+        grid-column: 2 / span 4;
+        font-size: 2rem;
+        text-align: center;
+        padding: 3rem;
+        color: white;
+        height: 25vh;
+
+        & h3 {
+            padding: 1rem 0;
+        }
+
+        @include mediaML {
+            grid-row: 3;
+            grid-column: 1 / span 5;
+            
+        }
+
+        @include mediaMd {
+            grid-row: 3;
+            grid-column: 1 / span 5;
+            
+        }
+
+        @include mediaSm {
+            grid-row: 3;
+            grid-column: 1 / span 5;            
+        }       
+    }
+
+    & .box {
+        //padding: 8rem;
+        padding: 8rem 4rem;
+        font-size: 1.6rem;
+        border-bottom: 2px solid $color2;
+        transition: opacity 1000ms ease-in;
+        opacity: 0;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-template-columns: 2 / span 4;
+
+        & p {
+            padding: 2rem 0;
+        }  
+
+        & .siteProf {
+            // max-width: 300px;
+            height: 100%;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;    
+
+            & img {
+                width: 100%;
+                height: auto;
+                //border-radius: 10%;
+                @include easeOut; 
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        
+        @include mediaSm {
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            padding: 2rem;
+        }
+
+        @include mediaML {
+            padding: 4rem;
+        }
+
+        @include mediaLg {
+            padding: 4rem;
+        }
+
+        &.view {
+            opacity: 1;
+            
+        }
+
+         & h1 {
+            font-size: clamp(2rem, 5vw, 6rem);
+            padding: 4rem 0;
+        }
+
+        & h2 {
+            font-size: clamp(1.6rem, 3vw, 4rem);
+            padding: 4rem 0;
+
+            @include mediaLg {
+                padding: 4rem;
+            }
+
+            @include mediaML {
+                padding: 4rem;
+            }
+        }
+
+        & a {
+            text-decoration: none;
+            text-align: right;
+            
+        }
+
+        & i {
+            color: $color2;
+            
+        }
+
+        & .icons {
+            text-align: right;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;            
+        }
+
+        & p {
+            padding: 2rem 0;
+        }
+
+        
+    }
+    
+    & .abox1 {
+        grid-column: 2 / span 2;
+        grid-row: 3;
+
+        @include mediaLg {
+            grid-column: 2 / span 3;
+            grid-row: 3;
+            // padding: 2rem;
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 3;
+            grid-row: 4;
+            // padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 3;
+            grid-row: 4;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 4;
+            padding: 2rem;
+        }
+
+        & h2, h3 {
+            padding: 1rem 0;
+        }
+    
+        & p {
+            padding: 1rem 0;
+        }
+    }
+    
+    & .abox2 {
+        text-align: center;
+        grid-column: 4;
+        grid-row: 3;
+        padding: 4rem;
+        
+
+        @include mediaLg {
+            grid-column: 5;
+            grid-row: 3;
+            padding: 2rem;
+        }
+
+        @include mediaML {
+            grid-column: 4 / span 2;
+            grid-row: 4;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 4 / span 2;
+            grid-row: 4;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 /-1;
+            grid-row: 5;
+            padding: 2rem;
+        }
+
+        
+    }
+    
+    & .abox3 {
+        grid-column: 2 / span 2;
+        grid-row: 4;
+
+        @include mediaLg {
+            grid-column: 2 / span 3;
+            grid-row: 4;            
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 3;
+            grid-row: 5;
+            
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 3;
+            grid-row: 5;
+            
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 6;
+            
+        }
+        
+        & h2, h3 {
+            padding: 1rem 0;
+        }
+    
+        & p {
+            padding: 1rem 0;
+        }
+    }
+    
+    & .abox4 {
+        text-align: center;
+        grid-column: 4;
+        grid-row: 4;
+        padding: 4rem;
+
+        @include mediaLg {
+            grid-column: 5;
+            grid-row: 4;            
+        }
+
+        @include mediaML {
+            grid-column: 4 / span 2;
+            grid-row: 5;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 4 / span 2;
+            grid-row: 5;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 7;
+            padding: 2rem;
+        }
+    }
+
+    & .abox5 {
+        grid-column: 2 / span 2;
+        grid-row: 5;
+
+        @include mediaLg {
+            grid-column: 2 / span 3;
+            grid-row: 5;            
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 3;
+            grid-row: 6;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 3;
+            grid-row: 6;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 8;
+            padding: 2rem;
+        }
+        
+        & h2, h3 {
+            padding: 1rem 0;
+        }
+    
+        & p {
+            padding: 1rem 0;
+        }
+    }
+
+    & .abox6 {
+        text-align: center;
+        grid-column: 4;
+        grid-row: 5;
+        padding: 8rem 2rem;
+
+        @include mediaLg {
+            grid-column: 5;
+            grid-row: 5;            
+        }
+
+        @include mediaML {
+            grid-column: 4 / span 2;
+            grid-row: 6;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 4 / span 2;
+            grid-row: 6;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 9;
+            padding: 2rem;
+        }
+    }
+
+    & .abox7 {
+        grid-column: 2 / span 2;
+        grid-row: 6;
+
+        @include mediaLg {
+            grid-column: 2 / span 3;
+            grid-row: 6;            
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 3;
+            grid-row: 7;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 3;
+            grid-row: 7;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 10;
+            padding: 2rem;
+        }
+
+        & h2, h3 {
+            padding: 1rem 0;
+        }
+    
+        & p {
+            padding: 1rem 0;
+        }
+    }
+
+    & .abox8 {
+        text-align: center;
+        grid-column: 4;
+        grid-row: 6;
+        padding: 4rem;
+
+        @include mediaLg {
+            grid-column: 5;
+            grid-row: 6;            
+        }
+
+        @include mediaML {
+            grid-column: 4 / span 2;
+            grid-row: 7;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 4 / span 2;
+            grid-row: 7;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 11;
+            padding: 2rem;
+        }
+    }
+
+    & .abox9 {
+        grid-column: 2;
+        grid-row: 7;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        height: 100%;
+
+        @include mediaLg {
+            display: none;
+        }
+
+        @include mediaML {
+            display: none;
+        } 
+
+        @include mediaMd {
+            display: none;
+        }  
+        
+        @include mediaSm {
+            display: none;
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+            
+        }
+
+    }
+
+    & .abox10 {
+        grid-column: 3 / span 3;
+        grid-row: 7;
+        padding: 4rem;
+        
+
+        @include mediaLg {
+            grid-column: 2 / span 4;
+            grid-row: 7;
+            
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 5;
+            grid-row: 8;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 5;
+            grid-row: 8;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 12;
+            padding: 2rem;
+        }
+
+        & h2 {
+            padding: 2rem 0;
+        }
+    }
+
+    & .abox11 {
+        grid-column: 2 / span 2;
+        grid-row: 8;
+        border-bottom: none;
+
+        @include mediaLg {
+            grid-column: 2 / span 3;
+            grid-row: 8;
+            
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 3;
+            grid-row: 9;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 3;
+            grid-row: 9;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 13;
+            padding: 2rem;
+        }
+
+        & h2 {
+            padding: 2rem 0;
+        }
+    }
+
+    & .abox12 {
+        grid-column: 4;
+        grid-row: 8;
+        text-align: center;
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+
+        @include mediaLg {
+            grid-column: 5;
+            grid-row: 8;
+            padding: 2rem;
+        }
+
+        @include mediaML {
+            grid-column: 4 / span 2;
+            grid-row: 9;
+            padding: 2rem;
+        }
+        
+        @include mediaMd {
+            grid-column: 4 / span 2;
+            grid-row: 9;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            display: none;
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+
+        
+    }
+
+    & .abox13 {
+        grid-column: 2;
+        grid-row: 9;
+        border-bottom: none;
+        padding: 2rem;
+        align-items: center;
+        min-width: 350px;
+
+        @include mediaLg {
+            grid-column: 2;
+            grid-row: 9;
+            
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 2;
+            grid-row: 10;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 2;
+            grid-row: 10;
+            padding: 2rem;
+            min-width: 250px;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 15;
+            padding: 2rem;
+        }
+
+        & img {
+            //width: clamp(200px, 350px, 100%);
+            width: 100%;
+            height: auto;
+            padding: 2rem;
+        }
+    }
+
+    & .abox14 {
+        border-bottom: none;
+        grid-column: 3 / span 3;
+        grid-row: 9;
+        padding: 4rem;
+
+        @include mediaLg {
+            grid-column: 3 / span 3;
+            grid-row: 9;
+            padding: 4rem;
+        }
+
+        @include mediaML {
+            grid-column: 3 / span 2;
+            grid-row: 10;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 3 / span 2;
+            grid-row: 10;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 16;
+            padding: 2rem;
+        }
+
+        & h2 {
+            padding: 2rem 0;
+        }
+    }
+
+    & .abox15 {
+        grid-column: 2 / span 4;
+        grid-row: 10;
+        border-bottom: none;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: min-content repeat(3, 1fr);
+        gap: 2rem;
+        justify-items: center;
+        text-align: center;
+
+        @include mediaLg {
+            grid-column: 2 / span 5;
+            grid-row: 10;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: min-content repeat(5, 1fr);            
+            padding: 3rem;
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 5;
+            grid-row: 11;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: min-content repeat(5, 1fr);            
+            padding: 3rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 5;
+            grid-row: 11;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: min-content repeat(5, 1fr);            
+            padding: 3rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / span 5;
+            grid-row: 17;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: min-content repeat(8, 1fr);            
+            padding: 3rem;
+        }
+        
+
+        & img {
+            width: 10rem;
+            height: 10rem;
+            @include easeOut;
+            border-radius: 10%;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        & h2 {
+            padding: 2rem 0;
+            grid-column: 1 / -1;
+            text-align: center;
+            width: 100%;
+            vertical-align: middle;            
+        }
+    }
+
+    & .abox16 {
+        grid-column: 2 / span 4;
+        grid-row: 11;
+        border-bottom: none;
+
+        @include mediaLg {
+            grid-column: 2 / span 4;
+            grid-row: 11;
+            
+        }
+
+        @include mediaML {
+            grid-column: 1 / span 5;
+            grid-row: 12;
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            grid-column: 1 / span 5;
+            grid-row: 12;
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / -1;
+            grid-row: 18;
+            padding: 2rem;
+        }
+
+        & h2 {
+            padding: 2rem 0;
+            
+        }
+    }
+
+}
+

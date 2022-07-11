@@ -1,0 +1,432 @@
+@import "config";
+@import "menu";
+@import "about";
+@import "tools";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    max-width: 1920px;
+    margin: auto;    
+    font-size: 10px;     
+    scroll-padding-top: 5rem;
+    
+    &::-webkit-scrollbar {
+        background: $color1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $color2;
+        border-radius: 100vw;
+        @include easeOut;
+
+        &:hover {
+            background-color: lighten($color2, 10);
+        }
+    }
+}
+
+body {
+    background-color: hsl(43, 28%, 71%);
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: min-content repeat(3, 1fr);
+    grid-template-rows: 6rem repeat(24, auto);
+      
+
+    @include mediaSm {
+        grid-template-rows: min-content repeat(24, auto);
+        
+    }
+    
+
+    & //Main Nav Start
+    .main-nav {
+        grid-row: 1;
+        grid-column: 2 / 5;
+        position: sticky;
+        overflow: hidden;
+        top: 0%;
+        width: 100%;
+        max-width: 1920px;
+        height: 6rem;
+        background-color: rgba($color1, $alpha: 0.9);
+        color: $color2;        
+        z-index: 2;
+        @include easeOut;
+        
+        @include mediaMd {
+            grid-column: 1 / -1;
+        }
+        
+        & ul {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1rem;
+            margin: 0px;
+            font-size: 1.6rem;
+
+            @include mediaSm {
+                justify-content:left;
+            }
+    
+            @include mediaMd {
+                justify-content:left;
+            }
+        }
+    
+        & .mainNav-item {
+    
+            @include mediaSm {
+                display: none;
+            }
+            
+            @include mediaMd {                
+                display: none;
+            }
+    
+            @include mediaML {
+                visibility: hidden;
+                
+            }
+    
+            @include mediaLg {
+                justify-content: left;
+                font-size: 1rem;
+            }
+            
+            a {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                @include easeOut;    
+                
+                &:hover {
+                    color:$color2;
+                }
+            }
+        }
+    
+        .siteicon {
+            max-width: 5rem;
+            align-self: center;            
+
+            @include mediaSm {
+                justify-self: center;
+            }
+            
+        }    
+        
+    }
+    //Main Nav End
+
+    .sidebar {
+        padding-top: 6rem;
+        grid-row: 1 / -1;
+        grid-column: 1;
+        height: 100%;
+        width: 100%;    
+        background-color: $color2;
+        font-size: 1.6rem;
+        
+        
+        @include mediaMd {
+            grid-row: 2;
+            grid-column: 1 / span 5;
+            height: 100%;
+            width: 100%;    
+            font-size: 1.6rem; 
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr min-content 1fr;
+            align-items: center;
+            justify-items: center;
+        }
+
+        @include mediaSm {
+            grid-row: 2;
+            grid-column: 1 / span 5;
+            height: 100%;
+            width: 100%;    
+            font-size: 1.6rem; 
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(3, auto);
+            align-items: center;
+        }
+
+        & .profimg {
+            width: 100%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+            border-radius: 25%;
+            max-height: 300px;
+            max-width: 300px;
+            
+
+            @include mediaSm {
+                display: none;                
+            }
+
+            @include mediaMd {
+                padding: 2rem;
+                
+            }
+        }
+
+        & .social {
+            color: black;
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 0;
+
+            @include mediaMd {
+                flex-direction: column;
+                height: 100%;                
+            }
+
+            @include mediaSm {
+                flex-direction: row;
+            }
+
+            & a {
+                color: black;
+            }
+
+            
+        }
+
+        & .details {
+            padding: 1rem;
+
+            & .msemail {
+
+                @include mediaSm {
+                    display: none;                        
+                }
+            }
+
+            & .msemail1 {
+                display: none; 
+
+                @include mediaSm {
+                    display: inline-block;                        
+                }
+            }
+
+            @include mediaSm {
+                text-align: center;
+            }
+
+            & p {
+                padding: 1rem 0;
+
+                @include mediaMd {
+                    padding: 0.5rem;                        
+                }
+
+                @include mediaSm {
+                    padding: 0.5rem;                        
+                }
+            }
+        }
+
+        & .cert {
+            padding: 1rem;
+
+            & p {
+                padding-bottom: 1rem;                
+            }
+
+            @include mediaMd {
+                padding: 0.5rem;
+                display: none;   
+            }
+
+            @include mediaSm {
+                padding: 0.5rem;
+                display: none;   
+            }
+            
+        }
+    
+    }
+
+    @for $x from 1 through 13 {
+        i:nth-child(#{$x}) {
+          animation-delay: $x * 0.2s;
+        }
+      }
+
+    & .intro {
+        grid-row: 2;
+        grid-column: 2 / span 3;
+        font-size: 2rem;
+        text-align: center;
+        padding: 3rem;
+        
+
+        & h3 {
+            padding: 1rem 0;
+        }
+
+        @include mediaMd {
+            grid-row: 3;
+            grid-column: 1 / span 5;
+            
+        }
+
+        @include mediaSm {
+            grid-row: 3;
+            grid-column: 1 / span 5;
+            
+        }
+
+        & .expwith {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            padding: 2rem;
+            color: $color2;
+            flex-wrap: wrap;
+            
+
+            & i {
+                opacity: 0;
+                animation-fill-mode: backwards;
+                padding: 1rem;
+                @include fade-in;
+            }
+        }
+    }
+
+    & .box {
+        padding: 8rem;
+        font-size: 1.6rem;
+        border-bottom: 2px solid $color2;
+        transition: opacity 1000ms ease-in;
+        opacity: 0;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-template-columns: 2 / span 3;
+
+        @include mediaSm {
+            padding: 2rem;
+        }
+
+        & .jobProf {
+            display: flex;
+            flex-direction: column;
+            max-width: 50vw;
+
+            @include mediaSm {
+                max-width: 100%;
+            }
+        }
+        
+        &.view {
+            opacity: 1;
+            
+        }
+
+        & h2, h3, p {
+            padding: 1rem 0;
+        }
+
+        & a {
+            text-decoration: none;
+            text-align: right;
+            
+        }
+
+        & i {
+            color: $color2;            
+        }
+
+        & .icons {
+            text-align: right;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            
+        }
+
+    }
+
+    & .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box11, .box12, .box13, .box14, .box15, .box16, .box17, .box18, .box19, .box20, .box21, .box22 {
+        grid-column: 2 /span 3;
+    }
+
+    & .recHead {
+        text-align: center;
+        padding: 3rem 0;
+        font-size: clamp(2rem, 4vw, 4rem);
+    }
+
+}
+
+.footer {
+    background-color: hsla(0, 16%, 31%, 0.267);
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    background-image: url("../img/Logo1.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: end;    
+    color: $color2;
+
+    & h1, .icons {
+        background-color: hsla(0, 16%, 31%, 0.8);
+        padding: 1rem 0;
+
+        @include mediaSm {            
+            font-size: 1.6rem;              
+        }
+    }
+
+    @include mediaSm {
+        height: auto;
+        text-align: center;
+        font-size: 1.6rem;
+          
+    }
+
+    & .icons {
+        text-align: right;
+
+
+        @include mediaSm {
+             text-align: center;  
+        }
+        
+        & a {
+            padding: 0 1rem;
+            color: $color2;
+        }
+        
+        
+    }
+}
