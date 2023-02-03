@@ -1837,7 +1837,7 @@ body {
       position: absolute;
       bottom: 5px;
       right: 5px; }
-  .container .box1, .container .box2, .container .box3, .container .box4, .container .box5, .container .box6, .container .box7, .container .box8, .container .box9, .container .box10, .container .box11, .container .box12, .container .box13, .container .box14, .container .box15, .container .box16, .container .box17, .container .box18, .container .box19, .container .box20, .container .box21, .container .box22 {
+  .container .box1, .container .box2, .container .box3, .container .box4, .container .box5, .container .box6, .container .box7, .container .box8, .container .box9, .container .box10, .container .box11, .container .box12, .container .box13, .container .box14, .container .box15, .container .box16, .container .box17, .container .box18, .container .box19, .container .box20, .container .box21, .container .box22, .container .box23, .container .box24 {
     grid-column: 2 /span 3; }
   .container .recHead {
     text-align: center;
